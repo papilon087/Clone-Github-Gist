@@ -12,80 +12,87 @@
         class="rounded-lg focus:outline-none focus:border-emLavander focus:ring-0 px-3 py-1 bg-emDark-dark placeholder-emDark-light text-white font-brand font-regular text-sm mr-5 border-white"
         placeholder="Search..."
       />
-      <button class="mt-2 mr-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">All gists</button>
+      <button class="mt-2 mr-2 text-white text-[1rem] font-brand font-bold hover:text-emDark-light">
+        All gists
+      </button>
     </div>
   </div>
   <div class="relative">
-    <button class="img-down-arrow" type="button" id="user-menu-button" phx-click={ElixirGistWeb.Layouts.App.toggle_dropdown_menu()}>
-      <img src="/images/user-image.svg" alt="Profile Image" class="round-image-padding w-8 h-8">
+    <button
+      class="img-down-arrow"
+      type="button"
+      id="user-menu-button"
+      phx-click={ElixirGistWeb.Layouts.App.toggle_dropdown_menu()}
+    >
+      <img src="/images/user-image.svg" alt="Profile Image" class="round-image-padding w-8 h-8" />
     </button>
     <div
       id="dropdown_menu"
       class="dropdown-menu-arrow absolute right-0 mt-2 py-2 w-48 bg-emDark rounded-lg shadow-xl border border-white"
       hidden="true"
-      >
+    >
       <%= if @current_user do %>
-      <.link
-      href={~p"/users/settings"}
-      class="menu-item border-b border-white border-opacity-50"
-      role="menuitem"
-      tabindex="-1"
-      method="get"
-      id="user-menu-item-0"
-      >
-        Signed in as <%= @current_user.email %>
-      </.link>
-      <.link
-      href="#"
-      class="menu-item"
-      role="menuitem"
-      tabindex="-1"
-      method="get"
-      id="user-menu-item-1"
-      >
-        You gists
-      </.link>
-      <.link
-      href="#"
-      class="menu-item border-white border-opacity-50"
-      role="menuitem"
-      tabindex="-1"
-      method="get"
-      id="user-menu-item-2"
-      >
-        Saved gists
-      </.link>
-      <.link
-      href={~p"/users/log_out"}
-      class="menu-item"
-      role="menuitem"
-      tabindex="-1"
-      method="delete"
-      id="user-menu-item-3"
-      >
-        Sign out
-      </.link>
+        <.link
+          href={~p"/users/settings"}
+          class="menu-item border-b border-white border-opacity-50"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-0"
+        >
+          Signed in as <%= @current_user.email %>
+        </.link>
+        <.link
+          href="#"
+          class="menu-item"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-1"
+        >
+          You gists
+        </.link>
+        <.link
+          href="#"
+          class="menu-item border-white border-opacity-50"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-2"
+        >
+          Saved gists
+        </.link>
+        <.link
+          href={~p"/users/log_out"}
+          class="menu-item"
+          role="menuitem"
+          tabindex="-1"
+          method="delete"
+          id="user-menu-item-3"
+        >
+          Sign out
+        </.link>
       <% else %>
-      <.link
-      href={~p"/users/log_in"}
-      class="menu-item border-b border-white border-opacity-50"
-      role="menuitem"
-      tabindex="-1"
-      method="get"
-      id="user-menu-item-0"
-      >
-        Sign in
-      </.link>
-      <.link
-      href={~p"/users/register"}
-      class="menu-item"
-      role="menuitem"
-      tabindex="-1"
-      method="get"
-      id="user-menu-item-1"
-      >
-        Register
-      </.link>
+        <.link
+          href={~p"/users/log_in"}
+          class="menu-item border-b border-white border-opacity-50"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-0"
+        >
+          Sign in
+        </.link>
+        <.link
+          href={~p"/users/register"}
+          class="menu-item"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-1"
+        >
+          Register
+        </.link>
       <% end %>
     </div>
   </div>
@@ -99,11 +106,11 @@
     <div class="border-t-[1px] border-white w-full">
       <div class="flex items-center space-x-2 py-6">
         <img src="/images/gist-logo.svg" alt="Elixir Mentor Logo" class="h-8 w-8" />
-          <p>©️ 2023 Elixir Mentor</p>
-          <div class="text-emLavander-dark px-4 space-x-2">
-            <a href={~p"/"} class="hover:underline">Terms</a>
-            <a href={~p"/"} class="hover:underline">Privacy</a>
-            <a href={~p"/"} class="hover:underline">About</a>
+        <p>©️ 2023 Elixir Mentor</p>
+        <div class="text-emLavander-dark px-4 space-x-2">
+          <a href={~p"/"} class="hover:underline">Terms</a>
+          <a href={~p"/"} class="hover:underline">Privacy</a>
+          <a href={~p"/"} class="hover:underline">About</a>
         </div>
       </div>
     </div>
