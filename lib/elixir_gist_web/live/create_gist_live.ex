@@ -14,9 +14,10 @@ defmodule ElixirGistWeb.CreateGistLive do
   end
 
   def handle_event("validate", %{"gist" => params}, socket) do
-    changeset = %Gist{}
-    |> Gists.change_gist(params)
-    |>Map.put(:action, :validate)
+    changeset =
+      %Gist{}
+      |> Gists.change_gist(params)
+      |> Map.put(:action, :validate)
 
     {:noreply, assign(socket, :form, to_form(changeset))}
   end
