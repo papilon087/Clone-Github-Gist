@@ -3,4 +3,9 @@
     Instantly share Elixir code, notes, and snippets.
   </h1>
 </div>
-<.live_component module={GistFormComponent} id={:new} current_user={@current_user} />
+<.live_component
+  module={GistFormComponent}
+  id={:new}
+  form={to_form(Gists.change_gist(%Gist{}))}
+  current_user={@current_user}
+/>
